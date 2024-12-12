@@ -16,7 +16,8 @@ class OnCall(
 ) {
     fun run() {
         val workingMonthAndDay = getWorkingMonthAndDay()
-
+        val timeTable = workingMonthAndDay.showTimeTable()
+        userInteraction.handleTimeTable(timeTable)
     }
 
     private fun getMonthAndDay(): String = retryWhenNoException {

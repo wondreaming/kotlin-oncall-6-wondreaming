@@ -1,7 +1,7 @@
 package oncall.model
 
 enum class Day(
-    val idx: Int,
+    val index: Int,
     val day: String,
 ) {
     SUNDAY(0, "일"),
