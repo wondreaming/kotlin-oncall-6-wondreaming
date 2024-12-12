@@ -1,5 +1,8 @@
 package oncall
 
+import oncall.controller.OnCall
+
 fun main() {
-    TODO("프로그램 구현")
+    val onCall = OnCall()
+    onCall.run()
 }
