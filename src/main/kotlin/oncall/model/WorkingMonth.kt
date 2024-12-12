@@ -5,5 +5,5 @@ data class WorkingMonth(
     val day: Day,
     val weekdaysPeople: List<String>,
     val weekendPeople: List<String>,
-    val timeTable: List<String>,
+    private val timeTable: MutableList<String> = mutableListOf(),
 )

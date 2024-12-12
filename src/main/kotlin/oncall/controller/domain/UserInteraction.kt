@@ -16,4 +16,9 @@ class UserInteraction(
         outputView.showQuestion("평일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
         return inputView.getInput()
     }
+
+    fun handleWeekendPeople(): String {
+        outputView.showQuestion("휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> ")
+        return inputView.getInput()
+    }
 }

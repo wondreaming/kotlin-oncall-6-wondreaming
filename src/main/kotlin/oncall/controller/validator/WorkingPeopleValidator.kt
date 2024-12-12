@@ -1,6 +1,7 @@
 package oncall.controller.validator
 
 import oncall.model.Day
+import oncall.util.splitByComma
 
 class WorkingPeopleValidator {
     operator fun invoke(input: String) {
@@ -25,8 +26,10 @@ class WorkingPeopleValidator {
         require(input.size == input.toSet().size) { WorkingPeopleErrorType.NOT_DUPLICATE }
     }
 
-    fun checkBetween(weekdaysPeople: List<String>, weekendPeople: List<String>) {
-        val joinPeople = weekdaysPeople.union(weekendPeople)
+    fun checkBetween(weekdaysPeople: String, weekendPeople: String) {
+        val weekdaysWorkingPeople = weekdaysPeople.splitByComma()
+        val weekendWorkingPeople = weekendPeople.splitByComma()
+        val joinPeople = weekdaysWorkingPeople.union(weekendWorkingPeople)
         require(joinPeople.size in 5..35) { WorkingPeopleErrorType.BETWEEN }
     }
 }
